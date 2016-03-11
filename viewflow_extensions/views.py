@@ -1,7 +1,7 @@
 """
 Views for view nodes that add additional behavior.
 
-.. inheritance-diagram:: service.models
+.. inheritance-diagram:: viewflow_extensions.views
     :parts: 1
 """
 from viewflow.activation import STATUS, Activation
