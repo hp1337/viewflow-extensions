@@ -1,4 +1,4 @@
-viewflow-extensions
+viewflow_extensions
 ===================
 
 .. toctree::

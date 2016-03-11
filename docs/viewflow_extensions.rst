@@ -1,6 +1,13 @@
 viewflow_extensions package
 ===========================
 
+Submodules
+----------
+
+.. toctree::
+
+   viewflow_extensions.views
+
 Module contents
 ---------------
 
