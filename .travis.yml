@@ -37,6 +37,6 @@ script:
   - flake8 --jobs=2 .
   - pep257 --explain --source --count django_extensions
   - (cd docs; make spelling)
-  - coverage run --source=django_extensions -m py.test
+  - coverage run --source=viewflow_extensions -m py.test
 after_success:
   - coveralls
