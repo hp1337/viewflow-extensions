@@ -42,7 +42,7 @@ clean:
 	-rm -rf $(BUILDDIR)/*
 
 apidoc:
-	sphinx-apidoc --separate -f  -o . .. ../**/migrations ../tests ../setup.py
+	sphinx-apidoc --separate --force --module-first -H "Viewflow Extensions"  -o . ../viewflow_extensions/ ../**/migrations
 
 html:
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html

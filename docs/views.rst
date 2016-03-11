@@ -1,5 +1,5 @@
-viewflow_extensions.views module
-================================
+Views
+=====
 
 .. automodule:: viewflow_extensions.views
     :members:

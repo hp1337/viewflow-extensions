@@ -15,4 +15,10 @@ Simply install the latest stable package using the command
 
 `pip install viewflow-extensions`
 
-and add `'viewflow__extensions'` to `INSTALLED_APP`s in your settings.py, that's it!
+and add `'viewflow_extensions'` to `INSTALLED_APP`s in your settings.py, that's it!
+
+## Documentation
+The latest documentation can be found at [Read the Docs](http://viewflow-extensions.rtfd.org/).
+
+## Contribution
+Please read the [Contributing Guide](CONTRIBUTING.md) before you submit a pull request.
