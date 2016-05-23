@@ -6,11 +6,14 @@ import sys
 
 import os
 
+import django
+
 on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 
 year = datetime.datetime.now().strftime("%Y")
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "tests.testapp.settings")
+django.setup()
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -54,9 +57,9 @@ def linkcode_resolve(domain, info):
 
 intersphinx_mapping = {
     'python': ('http://docs.python.org/3.5', None),
-    'django': ('https://docs.djangoproject.com/en/dev/',
-               'https://docs.djangoproject.com/en/dev/_objects/'),
-    'viewflow': ('https://viewflow.readthedocs.org/en/latest/', None),
+    'django': ('https://docs.djangoproject.com/en/stable/',
+               'https://docs.djangoproject.com/en/stable/_objects/'),
+    'viewflow': ('https://viewflow.readthedocs.io/en/latest/', None),
 }
 
 # spell check
