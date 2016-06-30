@@ -6,7 +6,7 @@ from viewflow.base import Flow
 from viewflow.contrib import celery
 
 try:
-    from viewflow.flow import Obsolete
+    from viewflow.flow.obsolete import Obsolete
 except ImportError:
     class Obsolete(Flow):
         pass
@@ -69,8 +69,8 @@ class FlowGraph(object):
             branches = getattr(node, 'branches')
             return [b[0] for b in branches]
 
-        if not isinstance(node, (flow.End, Obsolete)):
-            return [getattr(node, '_next'), ]
+        if hasattr(node, '_next'):
+            return [getattr(node, '_next')]
 
     @property
     def node_list(self):
