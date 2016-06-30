@@ -12,6 +12,8 @@ on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 
 year = datetime.datetime.now().strftime("%Y")
 
+sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), os.pardir))
+
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "tests.testapp.settings")
 django.setup()
 
