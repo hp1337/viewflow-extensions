@@ -31,10 +31,20 @@ from .flow_graph import FlowGraph
 
 def process_flows(app, what, name, obj, options, lines):
     if inspect.isclass(obj) and issubclass(obj, Flow):
-        flow_graph = FlowGraph(flow_cls=obj)
-        graph = flow_graph.create_diagraph()
         tmp_dir = mkdtemp()
-        svg_file_path = graph.render(filename=os.path.join(tmp_dir, obj._meta.flow_label))
+        file_name = os.path.join(tmp_dir, obj._meta.flow_label)
+        try:
+            from viewflow import graph
+            grid = graph.calc_layout_data(obj)
+            svg = graph.grid_to_svg(grid)
+            svg_file_path = "%s.svg" % file_name
+            with open(svg_file_path) as f:
+                f.write(svg)
+            lines.append('.. image:: /{}'.format(svg_file_path))
+        except ImportError:
+            flow_graph = FlowGraph(flow_cls=obj)
+            graph = flow_graph.create_diagraph()
+            svg_file_path = graph.render(filename=file_name)
         lines.append('.. image:: /{}'.format(svg_file_path))
     return lines
 
